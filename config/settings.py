@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 from decouple import config
 
+import dj_database_url
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -27,7 +29,9 @@ SECRET_KEY = config(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=True, cast=bool)
 
-ALLOWED_HOSTS = ["127.0.0.1", "your-domain.com"]
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="127.0.0.1").split(" ")
+
+# ["127.0.0.1", "your-domain.com"]
 
 # change the default user models to our custom model
 AUTH_USER_MODEL = "accounts.User"
@@ -129,6 +133,10 @@ DATABASES = {
         "PORT": config("DB_PORT", default=5432),
     }
 }
+
+DATABASES["default"] = dj_database_url.parse("postgres://kavdan:R74VIqLhNCaQW4T788kGVUx3Hj4diP4b@dpg-cp1pfimd3nmc73b94t4g-a.oregon-postgres.render.com/app_e6ky")
+
+# postgres://kavdan:R74VIqLhNCaQW4T788kGVUx3Hj4diP4b@dpg-cp1pfimd3nmc73b94t4g-a.oregon-postgres.render.com/app_e6ky
 
 # https://docs.djangoproject.com/en/stable/ref/settings/#std:setting-DEFAULT_AUTO_FIELD
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
