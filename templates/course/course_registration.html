@@ -1,0 +1,276 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }} | Learning management system{% endblock title %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Домашняя страница</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Регистрация курса</li>
+    </ol>
+</nav>
+
+<p class="title-1">Добавить курс &amp; Удалить</p>
+
+{% include 'snippets/messages.html' %}
+
+{% if current_semester %}
+{% if is_calender_on == False %}
+
+<div class="alert bg-danger">
+    <h1 class="text-light text-center">Календарь выключен</h1>
+    <h5 class="text-light text-center">Проверить календарь университета</h5>
+</div>
+
+{% else %}
+
+{% if not all_courses_are_registered %}
+
+<form action="{% url 'course_registration' %}" method="POST">{% csrf_token %}
+    <div class="col-md-12 p-0 bg-white">
+        <p class="form-title fw-bold">Добавить курс</p>
+        <div class="container">
+            <div class="d-flex justify-content-between mb-3">
+                <button title="Save Score" type="submit" class="btn btn-primary"><i class="fa fa-plus"></i>Добавить выбранный</button>
+            </div>
+
+            <div class="table-responsive p-0 px-2 mt-2">
+                <div class="table-title"><u>Первый семестр:</u></div>
+                <div class="table-shadow">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Отметить</th>
+                                <th>Код курса</th>
+                                <th>Название курса</th>
+                                <th>Человек-часы</th>
+                                <th>Год</th>
+                                <th>Класификация</th>
+                                <th>Группа по выбору</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for course in courses %}
+                            {% if course.semester == "First" %}
+                            <tr>
+                                <th scope="row">
+                                    <input name="{{ course.pk }}" value="{{ course.courseUnit }}" type="checkbox">
+                                </th>
+                                <td>{{ course.code }}</td>
+                                <td>{{ course.title }}</td>
+                                <td>{{ course.credit }}</td>
+                                <td>{{ course.year }}</td>
+                                {% if course.is_elective %}
+                                <td>Выбор</td>
+                                {% else %}
+                                <td>Ядро</td>
+                                {% endif %}
+                                <th>-</th>
+                            </tr>
+                            {% endif %}
+                            {% empty %}
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span class="text-danger">
+                                        Нет курса.
+                                    </span>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            {% endfor %}
+                            <tr>
+                                <th></th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><b>Задолжности за первый семестр:</b> {{ total_first_semester_credit }} </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="table-responsive p-0 px-2 mt-2">
+                <div class="table-title"><u>Второй семестр:</u></div>
+                <div class="table-shadow">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Отметить</th>
+                                <th>Код курса</th>
+                                <th>Название курса</th>
+                                <th>Человек-часы</th>
+                                <th>Год</th>
+                                <th>Класификация</th>
+                                <th>Группа по выбору</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for course in courses %}
+                            {% if course.semester == "Second" %}
+                            <tr>
+                                <th scope="row">
+                                    <input name="{{ course.pk }}" value="{{ course.courseUnit }}" type="checkbox">
+                                </th>
+                                <td>{{ course.code }}</td>
+                                <td>{{ course.title }}</td>
+                                <td>{{ course.credit }}</td>
+                                <td>{{ course.year }}</td>
+                                {% if course.is_elective %}
+                                <td>Выбор</td>
+                                {% else %}
+                                <td>Core</td>
+                                {% endif %}
+                                <th>-</th>
+                            </tr>
+                            {% endif %}
+                            {% empty %}
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span class="text-danger">
+                                        Нет курсов.
+                                    </span>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            {% endfor %}
+                            <tr>
+                                <th></th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><b>Задолжности второго семестра</b> {{ total_sec_semester_credit }} </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td><b>Задолжности по курсу <a id="units">{{ total_registered_credit }}</a></b>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><b>Общее кол-во задолжностей:</b> {{ total_sec_semester_credit|add:total_first_semester_credit }} </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endif %}
+<br>
+<br>
+
+{% if not no_course_is_registered %}
+
+<a class="btn btn-warning" href="{% url 'course_registration_form' %}" target="_blank" title="Print Registration Form">
+    <i class="fas fa-print"></i> Отобразить зарегестрированные курсы
+</a>
+
+<div class="col-md-12 p-0 bg-white">
+    <p class="form-title"><b>Удалить курс</b>
+    <div class="level-wrapper">
+        <div class="info-text">{{ student.level }}</div>
+    </div>
+    </p>
+    <div class="container">
+        <form action="{% url 'course_drop' %}" method="POST">
+            {% csrf_token %}
+            <div class="d-flex justify-content-between mb-4">
+                <button title="Сохранить счет" type="submit" class="btn btn-primary">
+                    <i class="fa fa-times"></i> Удалить выбранный
+                </button>
+            </div>
+
+            <!-- <div>
+            <a target="_blank" href="{% url 'course_registration_form' %}" class="btn btn-outline-white btn-rounded btn-sm px-2">
+                <i class="fa fa-file-pdf-o" aria-hidden="true"></i> Print Registration Form
+              </a>
+            </div> -->
+
+            <div class="table-responsive p-0 px-2 mt-2">
+                <div class="table-shadow">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Отметить</th>
+                                <th>Код курса</th>
+                                <th>Название курса</th>
+                                <th>Человек-часы</th>
+                                <th>Год</th>
+                                <th>Класификация</th>
+                                <th>Группа по выбору</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for course in registered_courses %}
+                            <tr>
+                                <th scope="row">
+                                    <input name="{{ course.pk }}" value="{{ course.courseUnit }}" type="checkbox">
+                                </th>
+                                <td>{{ course.code }}</td>
+                                <td>{{ course.title }}</td>
+                                <td>{{ course.credit }}</td>
+                                <td>{{ course.year }}</td>
+                                {% if course.is_elective %}
+                                <td>Выбор</td>
+                                {% else %}
+                                <td>Ядро</td>
+                                {% endif %}
+                                <th>-</th>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span class="text-danger">
+                                        Нет курсов.
+                                    </span>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            {% endfor %}
+                            <tr>
+                                <th></th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><b>Общее кол-во кредитов:</b> {{ total_registered_credit }} </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endif %}
+{% endif %}
+{% endif %}
+
+{% endblock content %}

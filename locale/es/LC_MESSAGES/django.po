@@ -1,0 +1,480 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-06 12:13+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\accounts\templates\accounts\profile.html:121
+#: .\accounts\templates\accounts\profile_single.html:119
+msgid " вы можете просматривать свою посещаемость, оценки и результаты."
+msgstr ""
+
+#: .\accounts\validators.py:12
+msgid ""
+"Введите корректное имя пользователя. Оно должно состоять только из английских букв, "
+"цифр и символов @/./+/-/_."
+msgstr ""
+
+#: .\quiz\admin.py:22 .\quiz\admin.py:24 .\quiz\forms.py:36 .\quiz\forms.py:38
+#: .\quiz\models.py:362
+msgid "Вопросы"
+msgstr ""
+
+#: .\quiz\models.py:20 .\quiz\models.py:413
+msgid "Содержание"
+msgstr ""
+
+#: .\quiz\models.py:21
+msgid "Рандом"
+msgstr ""
+
+#: .\quiz\models.py:22
+msgid "Нет"
+msgstr ""
+
+#: .\quiz\models.py:26
+msgid "Аттестация"
+msgstr ""
+
+#: .\quiz\models.py:27
+msgid "Экзамен"
+msgstr ""
+
+#: .\quiz\models.py:28
+msgid "Практический тест"
+msgstr ""
+
+#: .\quiz\models.py:47
+msgid "Название"
+msgstr ""
+
+#: .\quiz\models.py:49
+msgid "Описание"
+msgstr ""
+
+#: .\quiz\models.py:49
+msgid "Описание теста"
+msgstr ""
+
+#: .\quiz\models.py:51
+msgid "Случайная очередность"
+msgstr ""
+
+#: .\quiz\models.py:52
+msgid "Отображать вопросы в случайном порядке или в том порядке, в котором они заданы?"
+msgstr ""
+
+#: .\quiz\models.py:57
+msgid "Ответы в конце теста"
+msgstr ""
+
+#: .\quiz\models.py:58
+msgid ""
+"После каждого вопроса не показывается правильный ответ. Ответы выводятся в конце."
+msgstr ""
+
+#: .\quiz\models.py:60
+msgid "Экзаменационный билет"
+msgstr ""
+
+#: .\quiz\models.py:61
+msgid ""
+"При подтверждении положительного ответа, будут сохранены результаты каждой попытки пользователя. Это необходимо для "
+"последующей оценки."
+msgstr ""
+
+#: .\quiz\models.py:63
+msgid "Одна попытка"
+msgstr ""
+
+#: .\quiz\models.py:64
+msgid "Если да, то пользователю будет разрешена только одна попытка."
+msgstr ""
+
+#: .\quiz\models.py:66
+msgid "Проходной балл"
+msgstr ""
+
+#: .\quiz\models.py:67
+msgid "Процент, необходимый для сдачи экзамена."
+msgstr ""
+
+#: .\quiz\models.py:69
+msgid "Черновик"
+msgstr ""
+
+#: .\quiz\models.py:70
+msgid ""
+Если да, то тест не отображается в списке тестов и может быть пройден только "
+"пользователями, имеющими право редактировать тесты.
+msgstr ""
+
+#: .\quiz\models.py:89 .\quiz\models.py:216 .\quiz\models.py:350
+#: .\quiz\templates\quiz\sitting_list.html:31
+msgid "Тест"
+msgstr ""
+
+#: .\quiz\models.py:90
+msgid "Тесты"
+msgstr ""
+
+#: .\quiz\models.py:123 .\quiz\models.py:215
+#: .\quiz\templates\quiz\sitting_detail.html:18
+#: .\quiz\templates\quiz\sitting_list.html:29
+msgid "Пользователь"
+msgstr ""
+
+#: .\quiz\models.py:124 .\quiz\templates\progress.html:63
+#: .\quiz\templates\quiz\sitting_detail.html:20
+#: .\quiz\templates\quiz\sitting_list.html:33
+msgid "Оценка"
+msgstr ""
+
+#: .\quiz\models.py:129
+msgid "Прогресс пользователя"
+msgstr ""
+
+#: .\quiz\models.py:130
+msgid "Записи прогресса пользователя"
+msgstr ""
+
+#: .\quiz\models.py:147
+msgid "ошибка"
+msgstr ""
+
+#: .\quiz\models.py:147
+msgid "категория не существует или недопустимый балл"
+msgstr ""
+
+#: .\quiz\models.py:217 .\quiz\templates\quiz\sitting_list.html:30
+msgid "Курс"
+msgstr ""
+
+#: .\quiz\models.py:219
+msgid "Порядок вопросов"
+msgstr ""
+
+#: .\quiz\models.py:222
+msgid "Список вопросов"
+msgstr ""
+
+#: .\quiz\models.py:225
+msgid "Неправильные вопросы"
+msgstr ""
+
+#: .\quiz\models.py:228
+msgid "Текущая оценка"
+msgstr ""
+
+#: .\quiz\models.py:229
+msgid "Завершен"
+msgstr ""
+
+#: .\quiz\models.py:230
+msgid "Ответы пользователя"
+msgstr ""
+
+#: .\quiz\models.py:231 .\quiz\templates\quiz\sitting_detail.html:21
+msgid "Начало"
+msgstr ""
+
+#: .\quiz\models.py:232 .\quiz\templates\quiz\sitting_detail.html:22
+msgid "Конец"
+msgstr ""
+
+#: .\quiz\models.py:237
+msgid "Вы можете увидеть завершенные экзамены."
+msgstr ""
+
+#: .\quiz\models.py:351
+msgid "Визуализация"
+msgstr ""
+
+#: .\quiz\models.py:353
+msgid "Введите текст вопроса, который вы хотите отобразить"
+msgstr ""
+
+#: .\quiz\models.py:353 .\quiz\models.py:361 .\quiz\models.py:409
+#: .\quiz\templates\question.html:115
+#: .\quiz\templates\quiz\sitting_detail.html:28
+msgid "Вопрос"
+msgstr ""
+
+#: .\quiz\models.py:355
+msgid "Объяснение, которое будет показано после ответа на вопрос."
+msgstr ""
+
+#: .\quiz\models.py:356 .\quiz\templates\question.html:74
+#: .\quiz\templates\question.html:83 .\quiz\templates\result.html:76
+#: .\quiz\templates\result.html:148 .\quiz\templates\result.html:195
+#: .\quiz\templates\result.html:261
+msgid "Объяснение"
+msgstr ""
+
+#: .\quiz\models.py:373
+msgid "Порядок, в котором варианты выбора множественного выбора отображаются пользователю"
+msgstr ""
+
+#: .\quiz\models.py:374
+msgid "Порядок выбора"
+msgstr ""
+
+#: .\quiz\models.py:404
+msgid "Вопрос с множественным выбором"
+msgstr ""
+
+#: .\quiz\models.py:405
+msgid "Вопросы с множественным выбором"
+msgstr ""
+
+#: .\quiz\models.py:412
+msgid "Введите текст варианта ответа, который вы хотите отобразить."
+msgstr ""
+
+#: .\quiz\models.py:416
+msgid "Это правильный ответ?"
+msgstr ""
+
+#: .\quiz\models.py:417 .\quiz\templates\quiz\sitting_detail.html:50
+msgid "Правильно"
+msgstr ""
+
+#: .\quiz\models.py:423
+msgid "Выбор"
+msgstr ""
+
+#: .\quiz\models.py:424
+msgid "Выборы"
+msgstr ""
+
+#: .\quiz\models.py:445
+msgid "Эссе-вопрос"
+msgstr ""
+
+#: .\quiz\models.py:446
+msgid "Эссе-вопрос"
+msgstr ""
+
+#: .\quiz\templates\correct_answer.html:6 .\quiz\templates\question.html:45
+#: .\quiz\templates\result.html:48
+msgid "Вы ответили на предыдущий вопрос неправильно."
+msgstr ""
+
+#: .\quiz\templates\correct_answer.html:16 .\quiz\templates\question.html:55
+#: .\quiz\templates\result.html:58
+msgid "Это правильный ответ"
+msgstr ""
+
+#: .\quiz\templates\correct_answer.html:23 .\quiz\templates\question.html:62
+#: .\quiz\templates\result.html:65
+msgid "Это был ваш ответ."
+msgstr ""
+
+#: .\quiz\templates\progress.html:4
+msgid "Страница прогресса"
+msgstr ""
+
+#: .\quiz\templates\progress.html:5
+msgid "Страница результа пользователя"
+msgstr ""
+
+#: .\quiz\templates\progress.html:13
+msgid "Оценки категорий вопросов"
+msgstr ""
+
+#: .\quiz\templates\progress.html:20 .\quiz\templates\quiz\quiz_list.html:71
+#: .\quiz\templates\quiz\sitting_detail.html:13
+msgid "Категория"
+msgstr ""
+
+#: .\quiz\templates\progress.html:21
+msgid "Верно отвечено"
+msgstr ""
+
+#: .\quiz\templates\progress.html:22
+msgid "Неправильно"
+msgstr ""
+
+#: .\quiz\templates\progress.html:51
+msgid "Билеты предыдущего экзамена"
+msgstr ""
+
+#: .\quiz\templates\progress.html:53
+msgid "Ниже приведены результаты экзаменов, которые вы сдавали"
+msgstr ""
+
+#: .\quiz\templates\progress.html:62
+msgid "Название теста"
+msgstr ""
+
+#: .\quiz\templates\progress.html:64
+msgid "Возможная оценка"
+msgstr ""
+
+#: .\quiz\templates\question.html:23 .\quiz\templates\result.html:35
+#: .\quiz\templates\result.html:187
+msgid "Предыдущий вопрос"
+msgstr ""
+
+#: .\quiz\templates\question.html:32
+msgid "Ваш ответ был"
+msgstr ""
+
+#: .\quiz\templates\question.html:79 .\quiz\templates\result.html:81
+msgid "Данный вопрос не имеет объяснительной части."
+msgstr ""
+
+#: .\quiz\templates\question.html:115
+msgid "из"
+msgstr ""
+
+#: .\quiz\templates\question.html:120
+msgid "Категория теста"
+msgstr ""
+
+#: .\quiz\templates\question.html:145
+msgid "Проверка"
+msgstr ""
+
+#: .\quiz\templates\question.html:146
+msgid "Предыдущий"
+msgstr ""
+
+#: .\quiz\templates\quiz\quiz_list.html:66
+msgid "У вас будет только одна попытка на этот тест"
+msgstr ""
+
+#: .\quiz\templates\quiz\quiz_list.html:74
+msgid "Начать тест"
+msgstr ""
+
+#: .\quiz\templates\quiz\sitting_detail.html:4
+msgid "Результ"
+msgstr ""
+
+#: .\quiz\templates\quiz\sitting_detail.html:4
+msgid "для"
+msgstr ""
+
+#: .\quiz\templates\quiz\sitting_detail.html:12
+msgid "Название теста"
+msgstr ""
+
+#: .\quiz\templates\quiz\sitting_detail.html:19
+#: .\quiz\templates\quiz\sitting_list.html:32
+msgid "Завершен"
+msgstr ""
+
+#: .\quiz\templates\quiz\sitting_detail.html:29
+msgid "ответ пользователя"
+msgstr ""
+
+#: .\quiz\templates\quiz\sitting_detail.html:48
+msgid "неправильно"
+msgstr ""
+
+#: .\quiz\templates\quiz\sitting_detail.html:56
+msgid "Переключить статус ответа"
+msgstr ""
+
+#: .\quiz\templates\quiz\sitting_list.html:3
+msgid "Все тесты"
+msgstr ""
+
+#: .\quiz\templates\quiz\sitting_list.html:9
+msgid "Список завершенных экзаменов"
+msgstr ""
+
+#: .\quiz\templates\quiz\sitting_list.html:18
+msgid "Фильтрация"
+msgstr ""
+
+#: .\quiz\templates\quiz\sitting_list.html:48
+msgid "Просмотреть детали"
+msgstr ""
+
+#: .\quiz\templates\quiz\sitting_list.html:56
+msgid "По вашему запросу ничего не найдено..."
+msgstr ""
+
+#: .\quiz\templates\result.html:8
+msgid "Результаты экзамена для"
+msgstr ""
+
+#: .\quiz\templates\result.html:92 .\quiz\templates\result.html:206
+msgid "Результы экзамена"
+msgstr ""
+
+#: .\quiz\templates\result.html:95 .\quiz\templates\result.html:208
+msgid "название экзамена"
+msgstr ""
+
+#: .\quiz\templates\result.html:99 .\quiz\templates\result.html:212
+msgid "Вы ответили."
+msgstr ""
+
+#: .\quiz\templates\result.html:99 .\quiz\templates\result.html:212
+msgid "правильных вопросов из"
+msgstr ""
+
+#: .\quiz\templates\result.html:99 .\quiz\templates\result.html:212
+msgid "предоставляя вам"
+msgstr ""
+
+#: .\quiz\templates\result.html:99
+#, python-format
+msgid "%% правильно"
+msgstr ""
+
+#: .\quiz\templates\result.html:112 .\quiz\templates\result.html:222
+msgid "Просмотрите вопросы ниже и попробуйте сдать экзамен снова в будущем."
+msgstr ""
+
+#: .\quiz\templates\result.html:116
+msgid "Результат этого экзамена будет сохранен в разделе вашего прогресса."
+msgstr ""
+
+#: .\quiz\templates\result.html:118
+msgid "таким образом, вы сможете просматривать и отслеживать свой прогресс"
+msgstr ""
+
+#: .\quiz\templates\result.html:132 .\quiz\templates\result.html:240
+msgid "Ваш балл за сессию составляет"
+msgstr ""
+
+#: .\quiz\templates\result.html:132 .\quiz\templates\result.html:240
+msgid "из возможных"
+msgstr ""
+
+#: .\quiz\templates\result.html:153
+msgid "Для этого вопроса нет пояснения."
+msgstr ""
+
+#: .\quiz\templates\result.html:160 .\quiz\templates\result.html:258
+msgid "Ваш ответ"
+msgstr ""
+
+#: .\quiz\templates\result.html:212
+msgid "процент правильных ответов"
+msgstr ""
+
+#: .\quiz\templates\result.html:226
+msgid ""
+
+"Результат этого экзамена будет сохранен в разделе вашего прогресса, так что вы сможете "
+"просматривать и отслеживать свой прогресс."
+msgstr ""
